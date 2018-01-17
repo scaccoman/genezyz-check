@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Genezyz Watchdog",
+  "version": "0.1.1",
+  "permissions" : ["tabs", "activeTab", "notifications", "storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://netsuite-wwe-usw1.genesyscloud.com/ui/ad/v1/index.html"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "short_name": "Genezyz",
+  "browser_action": {
+    "default_icon": {
+      "19": "images/christmas-tree-19.png",
+      "38": "images/christmas-tree-38.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": { 
+    "16": "./images/christmas-tree-16.png",
+    "48": "./images/christmas-tree-48.png",
+   "128": "./images/christmas-tree-128.png" },
+   "background": {
+    "scripts": [
+      "server.js"
+    ],
+    "persistent": true
+  }
+}

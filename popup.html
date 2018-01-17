@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>With love from Davide</title>
+	<link rel="stylesheet" href="./lib/bootstrap.min.css">
+	<link rel="stylesheet" href="./lib/fontawesome-free-5.0.3/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+	<div>
+		<div class="helpSlider closed" id="helpContent">
+			<h3>With <img height="25px" src="./images/heart.ico"> from Davide</h3>
+			<form action="https://www.paypal.me/scaccoman081516" target="_blank">
+			    <input type="image" name="submit"
+			    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"
+			    alt="Donate">
+			    <img alt="" width="1" height="1"
+			    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+			</form>
+		</div>
+		<div class="card" style="width: 100%;">
+		  <div class="card-header">
+		    <h4><img style="margin-top: -5px" height="30px" src="./images/genesys-64.ico"> Genezyz Watchdog <img height="25px" src="./images/help-128.png" id="help"></h4>
+		    <div class="spinner hidden">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			</div>
+		  </div>
+		  <div class="card-body">
+		  	<h6>Set watching time</h6>
+			  <label for="startTime" style="display: inline; white-space:nowrap;">From</label>
+			  <input type="text" class="form-control" id="startTime" placeholder="(HH:mm:ss)" style="display: inline;width:100px">
+			
+			  <label for="endTime" style="display: inline; white-space:nowrap;">To</label>
+			  <input type="text" class="form-control" id="endTime" placeholder="(HH:mm:ss)" style="display: inline;width:100px">
+			
+			<div class="mainButtons">
+				<button id="submitBtn" class="btn btn-success"><i class="fas fa-save"></i> Save</button>
+				<button id="resetBtn" class="btn btn-warning"><i class="fas fa-redo-alt"></i> Reset</button>
+				<button id="selectBtn" class="btn btn-primary"><i class="fas fa-list-ol"></i> Queues</button>
+			</div>
+		  </div>
+		</div>
+		<span id="muteHideShow" style="display: none; margin-bottom: 2px">
+			<input type="checkbox" name="muteBtn" id="muteBtn" class="css-checkbox" />
+			<label for="muteBtn" class="css-label">Mute</label>
+		</span>
+		<button id="refreshQueuesBtn" style="display: none; margin-bottom: 2px" class="btn btn-default"><i class='fas fa-retweet'></i> Refresh List</button>
+		<button id="saveQueuesBtn" style="display: none; margin-bottom: 2px" class="btn btn-success"><i class="fas fa-hdd"></i> Save Queues</button>
+		<select id="select-queue" class="slider closed" multiple="multiple"></select>
+	</div>
+	<script src='popup.js'></script>
+</body>
+</html>
