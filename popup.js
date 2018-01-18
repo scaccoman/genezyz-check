@@ -377,333 +377,335 @@ function setSound(){
 }
 
 //Backup queue list
-var defaultQueues =  [];
-//     [{
-//          id: 0,
-//          name: "Account_Administration_VQ"
-//      },
-//      {
-//          id: 1,
-//          name: "CRM_Marketing_VQ"
-//      },
-//      {
-//          id: 2,
-//          name: "CRM_Sales_Force_Automation_VQ"
-//      },
-//      {
-//          id: 3,
-//          name: "CRM_Support_Management_VQ"
-//      },
-//      {
-//          id: 4,
-//          name: "CSV_Imports_CRM_VQ"
-//      },
-//      {
-//          id: 5,
-//          name: "CSV_Imports_Custom_Records_VQ"
-//      },
-//      {
-//          id: 6,
-//          name: "CSV_Imports_ERP_and_Payroll_VQ"
-//      },
-//      {
-//          id: 7,
-//          name: "Customer_Service_VQ"
-//      },
-//      {
-//          id: 8,
-//          name: "ERP_Advanced_Accounting_and_One_World_VQ"
-//      },
-//      {
-//          id: 9,
-//          name: "ERP_Basic_Accounting_VQ"
-//      },
-//      {
-//          id: 10,
-//          name: "ERP_Manufacturing_VQ"
-//      },
-//      {
-//          id: 11,
-//          name: "ERP_NS_Financial_Planning_VQ"
-//      },
-//      {
-//          id: 12,
-//          name: "ERP_NS_SRP_VQ"
-//      },
-//      {
-//          id: 13,
-//          name: "ERP_Order_to_Cash_VQ"
-//      },
-//      {
-//          id: 14,
-//          name: "ERP_Procure_to_Pay_VQ"
-//      },
-//      {
-//          id: 15,
-//          name: "ERP_Supply_Chain_Management_VQ"
-//      },
-//      {
-//          id: 16,
-//          name: "ERP_Warehouse_Management_System_VQ"
-//      },
-//      {
-//          id: 17,
-//          name: "Gold_Customer_Service_VQ"
-//      },
-//      {
-//          id: 18,
-//          name: "Japanese_VQ"
-//      },
-//      {
-//          id: 19,
-//          name: "Mobile_Devices_VQ"
-//      },
-//      {
-//          id: 20,
-//          name: "Monexa_VQ"
-//      },
-//      {
-//          id: 21,
-//          name: "NewHire_VQ"
-//      },
-//      {
-//          id: 22,
-//          name: "NS_Performance_VQ"
-//      },
-//      {
-//          id: 23,
-//          name: "ODBC_VQ"
-//      },
-//      {
-//          id: 24,
-//          name: "OMXSupport_VQ"
-//      },
-//      {
-//          id: 25,
-//          name: "OpenAir_VQ"
-//      },
-//      {
-//          id: 26,
-//          name: "Payroll_VQ"
-//      },
-//      {
-//          id: 27,
-//          name: "Platinum_NS_VQ"
-//      },
-//      {
-//          id: 28,
-//          name: "Platinum_OpenAir_VQ"
-//      },
-//      {
-//          id: 29,
-//          name: "Platinum_Team_1_APAC_VQ"
-//      },
-//      {
-//          id: 30,
-//          name: "Platinum_Team_1_NoAm_Eastern_VQ"
-//      },
-//      {
-//          id: 31,
-//          name: "Platinum_Team_2_AU_VQ"
-//      },
-//      {
-//          id: 32,
-//          name: "Platinum_Team_2_NoAm_Eastern_VQ"
-//      },
-//      {
-//          id: 33,
-//          name: "Platinum_Team_3_AU_VQ"
-//      },
-//      {
-//          id: 34,
-//          name: "Platinum_Team_3_NoAm_Central_VQ"
-//      },
-//      {
-//          id: 35,
-//          name: "Platinum_Team_3_NoAm_Eastern_VQ"
-//      },
-//      {
-//          id: 36,
-//          name: "Platinum_Team_4_NoAm_Central_VQ"
-//      },
-//      {
-//          id: 37,
-//          name: "Platinum_Team_4_NoAm_Mountain_VQ"
-//      },
-//      {
-//          id: 38,
-//          name: "Platinum_Team_4_UK-EMEA_VQ"
-//      },
-//      {
-//          id: 39,
-//          name: "Platinum_Team_5_NoAm_Mountain_VQ"
-//      },
-//      {
-//          id: 40,
-//          name: "Platinum_Team_5_NoAm_Pacific_VQ"
-//      },
-//      {
-//          id: 41,
-//          name: "Platinum_Team_6_NoAm_Pacific_VQ"
-//      },
-//      {
-//          id: 42,
-//          name: "Point_of_Sale_VQ"
-//      },
-//      {
-//          id: 43,
-//          name: "Premiere_Payroll_VQ"
-//      },
-//      {
-//          id: 44,
-//          name: "RPAccount_Administration_VQ"
-//      },
-//      {
-//          id: 45,
-//          name: "RPCRM_Marketing_VQ"
-//      },
-//      {
-//          id: 46,
-//          name: "RPCRM_Sales_Force_Automation_VQ"
-//      },
-//      {
-//          id: 47,
-//          name: "RPCRM_Support_Management_VQ"
-//      },
-//      {
-//          id: 48,
-//          name: "RPCSV_Imports_CRM_VQ"
-//      },
-//      {
-//          id: 49,
-//          name: "RPCSV_Imports_Custom_Records_VQ"
-//      },
-//      {
-//          id: 50,
-//          name: "RPCSV_Imports_ERP_and_Payroll_VQ"
-//      },
-//      {
-//          id: 51,
-//          name: "RPCustomer_Service_VQ"
-//      },
-//      {
-//          id: 52,
-//          name: "RPERP_Advanced_Accounting_and_One_World_VQ"
-//      },
-//      {
-//          id: 53,
-//          name: "RPERP_Basic_Accounting_VQ"
-//      },
-//      {
-//          id: 54,
-//          name: "RPERP_Manufacturing_VQ"
-//      },
-//      {
-//          id: 55,
-//          name: "RPERP_NS_Financial_Planning_VQ"
-//      },
-//      {
-//          id: 56,
-//          name: "RPERP_NS_SRP_VQ"
-//      },
-//      {
-//          id: 57,
-//          name: "RPERP_Order_to_Cash_VQ"
-//      },
-//      {
-//          id: 58,
-//          name: "RPERP_Procure_to_Pay_VQ"
-//      },
-//      {
-//          id: 59,
-//          name: "RPERP_Supply_Chain_Management_VQ"
-//      },
-//      {
-//          id: 60,
-//          name: "RPERP_Warehouse_Management_System_VQ"
-//      },
-//      {
-//          id: 61,
-//          name: "RPGold_Customer_Service_VQ"
-//      },
-//      {
-//          id: 62,
-//          name: "RPMobile_Devices_VQ"
-//      },
-//      {
-//          id: 63,
-//          name: "RPNS_Performance_VQ"
-//      },
-//      {
-//          id: 64,
-//          name: "RPODBC_VQ"
-//      },
-//      {
-//          id: 65,
-//          name: "RPPayroll_VQ"
-//      },
-//      {
-//          id: 66,
-//          name: "RPPoint_of_Sale_VQ"
-//      },
-//      {
-//          id: 67,
-//          name: "RPSiteBuilder_and_Basic_WebStore_VQ"
-//      },
-//      {
-//          id: 68,
-//          name: "RPSuiteBuilder_VQ"
-//      },
-//      {
-//          id: 69,
-//          name: "RPSuiteCommerceAdvanced_VQ"
-//      },
-//      {
-//          id: 70,
-//          name: "RPSuiteCommerceInStore_VQ"
-//      },
-//      {
-//          id: 71,
-//          name: "RPSuiteFlow_VQ"
-//      },
-//      {
-//          id: 72,
-//          name: "RPSuiteScript_SuiteTalk_SuiteBundler_including_SSO_VQ"
-//      },
-//      {
-//          id: 73,
-//          name: "SiteBuilder_and_Basic_WebStore_VQ"
-//      },
-//      {
-//          id: 74,
-//          name: "SuiteBuilder_VQ"
-//      },
-//      {
-//          id: 75,
-//          name: "SuiteCommerceAdvanced_VQ"
-//      },
-//      {
-//          id: 76,
-//          name: "SuiteCommerceInStore_VQ"
-//      },
-//      {
-//          id: 77,
-//          name: "SuiteFlow_VQ"
-//      },
-//      {
-//          id: 78,
-//          name: "SuiteScript_SuiteTalk_SuiteBundler_including_SSO_VQ"
-//      },
-//      {
-//          id: 79,
-//          name: "SuiteWorld_VQ"
-//      },
-//      {
-//          id: 80,
-//          name: "TSANet_VQ"
-//      },
-//      {
-//          id: 81,
-//          name: "VendaSupport_VQ"
-//      }
-//  ]
+// var defaultQueues =  [];
+
+var defaultQueues =
+    [{
+         id: 0,
+         name: "Account_Administration_VQ"
+     },
+     {
+         id: 1,
+         name: "CRM_Marketing_VQ"
+     },
+     {
+         id: 2,
+         name: "CRM_Sales_Force_Automation_VQ"
+     },
+     {
+         id: 3,
+         name: "CRM_Support_Management_VQ"
+     },
+     {
+         id: 4,
+         name: "CSV_Imports_CRM_VQ"
+     },
+     {
+         id: 5,
+         name: "CSV_Imports_Custom_Records_VQ"
+     },
+     {
+         id: 6,
+         name: "CSV_Imports_ERP_and_Payroll_VQ"
+     },
+     {
+         id: 7,
+         name: "Customer_Service_VQ"
+     },
+     {
+         id: 8,
+         name: "ERP_Advanced_Accounting_and_One_World_VQ"
+     },
+     {
+         id: 9,
+         name: "ERP_Basic_Accounting_VQ"
+     },
+     {
+         id: 10,
+         name: "ERP_Manufacturing_VQ"
+     },
+     {
+         id: 11,
+         name: "ERP_NS_Financial_Planning_VQ"
+     },
+     {
+         id: 12,
+         name: "ERP_NS_SRP_VQ"
+     },
+     {
+         id: 13,
+         name: "ERP_Order_to_Cash_VQ"
+     },
+     {
+         id: 14,
+         name: "ERP_Procure_to_Pay_VQ"
+     },
+     {
+         id: 15,
+         name: "ERP_Supply_Chain_Management_VQ"
+     },
+     {
+         id: 16,
+         name: "ERP_Warehouse_Management_System_VQ"
+     },
+     {
+         id: 17,
+         name: "Gold_Customer_Service_VQ"
+     },
+     {
+         id: 18,
+         name: "Japanese_VQ"
+     },
+     {
+         id: 19,
+         name: "Mobile_Devices_VQ"
+     },
+     {
+         id: 20,
+         name: "Monexa_VQ"
+     },
+     {
+         id: 21,
+         name: "NewHire_VQ"
+     },
+     {
+         id: 22,
+         name: "NS_Performance_VQ"
+     },
+     {
+         id: 23,
+         name: "ODBC_VQ"
+     },
+     {
+         id: 24,
+         name: "OMXSupport_VQ"
+     },
+     {
+         id: 25,
+         name: "OpenAir_VQ"
+     },
+     {
+         id: 26,
+         name: "Payroll_VQ"
+     },
+     {
+         id: 27,
+         name: "Platinum_NS_VQ"
+     },
+     {
+         id: 28,
+         name: "Platinum_OpenAir_VQ"
+     },
+     {
+         id: 29,
+         name: "Platinum_Team_1_APAC_VQ"
+     },
+     {
+         id: 30,
+         name: "Platinum_Team_1_NoAm_Eastern_VQ"
+     },
+     {
+         id: 31,
+         name: "Platinum_Team_2_AU_VQ"
+     },
+     {
+         id: 32,
+         name: "Platinum_Team_2_NoAm_Eastern_VQ"
+     },
+     {
+         id: 33,
+         name: "Platinum_Team_3_AU_VQ"
+     },
+     {
+         id: 34,
+         name: "Platinum_Team_3_NoAm_Central_VQ"
+     },
+     {
+         id: 35,
+         name: "Platinum_Team_3_NoAm_Eastern_VQ"
+     },
+     {
+         id: 36,
+         name: "Platinum_Team_4_NoAm_Central_VQ"
+     },
+     {
+         id: 37,
+         name: "Platinum_Team_4_NoAm_Mountain_VQ"
+     },
+     {
+         id: 38,
+         name: "Platinum_Team_4_UK-EMEA_VQ"
+     },
+     {
+         id: 39,
+         name: "Platinum_Team_5_NoAm_Mountain_VQ"
+     },
+     {
+         id: 40,
+         name: "Platinum_Team_5_NoAm_Pacific_VQ"
+     },
+     {
+         id: 41,
+         name: "Platinum_Team_6_NoAm_Pacific_VQ"
+     },
+     {
+         id: 42,
+         name: "Point_of_Sale_VQ"
+     },
+     {
+         id: 43,
+         name: "Premiere_Payroll_VQ"
+     },
+     {
+         id: 44,
+         name: "RPAccount_Administration_VQ"
+     },
+     {
+         id: 45,
+         name: "RPCRM_Marketing_VQ"
+     },
+     {
+         id: 46,
+         name: "RPCRM_Sales_Force_Automation_VQ"
+     },
+     {
+         id: 47,
+         name: "RPCRM_Support_Management_VQ"
+     },
+     {
+         id: 48,
+         name: "RPCSV_Imports_CRM_VQ"
+     },
+     {
+         id: 49,
+         name: "RPCSV_Imports_Custom_Records_VQ"
+     },
+     {
+         id: 50,
+         name: "RPCSV_Imports_ERP_and_Payroll_VQ"
+     },
+     {
+         id: 51,
+         name: "RPCustomer_Service_VQ"
+     },
+     {
+         id: 52,
+         name: "RPERP_Advanced_Accounting_and_One_World_VQ"
+     },
+     {
+         id: 53,
+         name: "RPERP_Basic_Accounting_VQ"
+     },
+     {
+         id: 54,
+         name: "RPERP_Manufacturing_VQ"
+     },
+     {
+         id: 55,
+         name: "RPERP_NS_Financial_Planning_VQ"
+     },
+     {
+         id: 56,
+         name: "RPERP_NS_SRP_VQ"
+     },
+     {
+         id: 57,
+         name: "RPERP_Order_to_Cash_VQ"
+     },
+     {
+         id: 58,
+         name: "RPERP_Procure_to_Pay_VQ"
+     },
+     {
+         id: 59,
+         name: "RPERP_Supply_Chain_Management_VQ"
+     },
+     {
+         id: 60,
+         name: "RPERP_Warehouse_Management_System_VQ"
+     },
+     {
+         id: 61,
+         name: "RPGold_Customer_Service_VQ"
+     },
+     {
+         id: 62,
+         name: "RPMobile_Devices_VQ"
+     },
+     {
+         id: 63,
+         name: "RPNS_Performance_VQ"
+     },
+     {
+         id: 64,
+         name: "RPODBC_VQ"
+     },
+     {
+         id: 65,
+         name: "RPPayroll_VQ"
+     },
+     {
+         id: 66,
+         name: "RPPoint_of_Sale_VQ"
+     },
+     {
+         id: 67,
+         name: "RPSiteBuilder_and_Basic_WebStore_VQ"
+     },
+     {
+         id: 68,
+         name: "RPSuiteBuilder_VQ"
+     },
+     {
+         id: 69,
+         name: "RPSuiteCommerceAdvanced_VQ"
+     },
+     {
+         id: 70,
+         name: "RPSuiteCommerceInStore_VQ"
+     },
+     {
+         id: 71,
+         name: "RPSuiteFlow_VQ"
+     },
+     {
+         id: 72,
+         name: "RPSuiteScript_SuiteTalk_SuiteBundler_including_SSO_VQ"
+     },
+     {
+         id: 73,
+         name: "SiteBuilder_and_Basic_WebStore_VQ"
+     },
+     {
+         id: 74,
+         name: "SuiteBuilder_VQ"
+     },
+     {
+         id: 75,
+         name: "SuiteCommerceAdvanced_VQ"
+     },
+     {
+         id: 76,
+         name: "SuiteCommerceInStore_VQ"
+     },
+     {
+         id: 77,
+         name: "SuiteFlow_VQ"
+     },
+     {
+         id: 78,
+         name: "SuiteScript_SuiteTalk_SuiteBundler_including_SSO_VQ"
+     },
+     {
+         id: 79,
+         name: "SuiteWorld_VQ"
+     },
+     {
+         id: 80,
+         name: "TSANet_VQ"
+     },
+     {
+         id: 81,
+         name: "VendaSupport_VQ"
+     }
+ ];

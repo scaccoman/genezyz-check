@@ -51,7 +51,7 @@ function checkCallsWaiting() {
 	if (document.getElementById("wwe-workspace-tab-4") && document.getElementById("wwe-workspace-tab-4").getAttribute("tabindex") === '0' && checkCalls === true && queuesSelected !== []) {
     console.log("--checking--");
     for (var i = 0; i < queuesSelected.length; i++){
-      console.log("queuesSelected[i].id - " + queuesSelected[i].id);
+      // console.log("queuesSelected[i].id - " + queuesSelected[i].id);
       if (document.querySelectorAll("tr[role='row']")[queuesSelected[i].id] 
           && document.querySelectorAll("tr[role='row']")[queuesSelected[i].id].children[1].children[0].children[3].innerHTML !== "0" 
           && document.querySelectorAll("tr[role='row']")[queuesSelected[i].id].children[1].children[0].children[3].innerHTML !== "-") {
